@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>220908_daily_summary | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="FIRST_HALF上午调通了两个接口。 上午就是 爷 -&gt; 父 -&gt; 子 三级组件之间通过 prop 传递数据，以及回调函数 的具体实践。1、传递回调函数爷 123456function GrandFather () &amp;#123;    const updateChange &#x3D; (arg1, arg2) &#x3D;&gt; &amp;#123;...&amp;#125;    return (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="220908_daily_summary">
+<meta property="og:url" content="http://example.com/2022/09/08/220908-daily-summary/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FIRST_HALF上午调通了两个接口。 上午就是 爷 -&gt; 父 -&gt; 子 三级组件之间通过 prop 传递数据，以及回调函数 的具体实践。1、传递回调函数爷 123456function GrandFather () &amp;#123;    const updateChange &#x3D; (arg1, arg2) &#x3D;&gt; &amp;#123;...&amp;#125;    return (">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-08T14:12:07.000Z">
+<meta property="article:modified_time" content="2022-09-08T14:35:53.247Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="work、react、props">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-220908-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/08/220908-daily-summary/" class="article-date">
+  <time class="dt-published" datetime="2022-09-08T14:12:07.000Z" itemprop="datePublished">2022-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      220908_daily_summary
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>上午调通了两个接口。</p>
+<h3 id="上午就是-爷-gt-父-gt-子-三级组件之间通过-prop-传递数据，以及回调函数-的具体实践。"><a href="#上午就是-爷-gt-父-gt-子-三级组件之间通过-prop-传递数据，以及回调函数-的具体实践。" class="headerlink" title="上午就是 爷 -&gt; 父 -&gt; 子 三级组件之间通过 prop 传递数据，以及回调函数 的具体实践。"></a>上午就是 <strong>爷 -&gt; 父 -&gt; 子</strong> 三级组件之间通过 <code>prop</code> 传递数据，以及回调函数 的具体实践。</h3><h4 id="1、传递回调函数"><a href="#1、传递回调函数" class="headerlink" title="1、传递回调函数"></a>1、传递回调函数</h4><p><code>爷</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function GrandFather () &#123;</span><br><span class="line">    const updateChange = (arg1, arg2) =&gt; &#123;...&#125;</span><br><span class="line">    return (</span><br><span class="line">        &lt;Father update=&#123;updateChange&#125; /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>父</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Father (props) &#123;</span><br><span class="line">    const &#123;update&#125; = props;</span><br><span class="line">    const onUpdate = () =&gt; &#123;</span><br><span class="line">		update(oldId, newId);	// oldId、newId 将自动作为arg1、arg2传递给 updateChange(arg1, arg2)</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Son triggerUpdate=&#123;onUpdate&#125; /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>子</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Son (props) &#123;</span><br><span class="line">    const &#123;triggerUpdate&#125; = props;</span><br><span class="line">    const XXX = () =&gt; &#123;</span><br><span class="line">        triggerUpdate();</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Son onXXX=&#123;XXX&#125; /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是向下传递方法，在子组件中去触发父组件中的函数并传递参数，修改父组件中的数据。</p>
+<p>兴许有更好的方法，但依照自己现阶段仅掌握到的<code>React</code> 知识，通过 <code>props</code>, <code>useState</code>，<code>useEffect</code>打出的组合拳，来实现这样的数据流通。</p>
+<h4 id="2、传递数据"><a href="#2、传递数据" class="headerlink" title="2、传递数据"></a>2、传递数据</h4><p><code>爷</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function GrandFather () &#123;</span><br><span class="line">    const [updateSucceed, setUpdateSucceed] = useState(false);</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Father updateSucceed=&#123;updateSucceed&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>父</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Father （props） &#123;</span><br><span class="line">    const &#123; updateSucceed &#125; = props;</span><br><span class="line">  	const [isSucceed, setIsSucceed] = useState(false);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        setIsSucceed(updateSucceed);</span><br><span class="line">        console.log(&#x27;传递下来的updateSucceed的值为：&#x27;, updateSucceed);</span><br><span class="line">        console.log(&#x27;传递之前isSucceed的值为：&#x27;, isSucceed);</span><br><span class="line">    &#125;, [updateSucceed]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>子</code> 中进行类似于 <code>父</code>中同样的操作。。。。</p>
+<p>可以发现这样并没有把值传递下去。。。。</p>
+<h4 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h4><p>就是这个传值的问题。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/08/220908-daily-summary/" data-id="cl7t5jrmn00009onoh8e58r4i" data-title="220908_daily_summary" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/09/07/220907-daily-summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">220907_daily_summary</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/09/08/220908-daily-summary/">220908_daily_summary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/07/220907-daily-summary/">220907_daily_summary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/06/220906-daily-summary/">220906_daily_summary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/06/220905-daily-summary/">220905_daily_summary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/06/220902-daily-summary/">220902_daily_summary</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
