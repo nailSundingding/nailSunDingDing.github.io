@@ -71,6 +71,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-220917-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/17/220917-daily-summary/" class="article-date">
+  <time class="dt-published" datetime="2022-09-17T01:53:44.000Z" itemprop="datePublished">2022-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/17/220917-daily-summary/">220917_week_summary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/17/220917-daily-summary/" data-id="cl85bqo8d0000s4noe7zxh9uf" data-title="220917_week_summary" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-220917-week-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/17/220917-week-summary/" class="article-date">
+  <time class="dt-published" datetime="2022-09-17T01:53:44.000Z" itemprop="datePublished">2022-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/17/220917-week-summary/">220917_week_summary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#<code>Tuesday</code> : 完成了一个简单的页面编写。</p>
+<h1 id="Wednesday-：-完成级联查询的编写。遇到了一个问题。"><a href="#Wednesday-：-完成级联查询的编写。遇到了一个问题。" class="headerlink" title="Wednesday ： 完成级联查询的编写。遇到了一个问题。"></a><code>Wednesday</code> ： 完成级联查询的编写。遇到了一个问题。</h1><p>在<code>react</code> 中，使用 <code>Link</code> 标签进行路由跳转时，会在 <code>state</code> 中带上一些参数，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link</span><br><span class="line">    to=&#x27;../.../.../&#x27;</span><br><span class="line">    query=&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    state=&#123;</span><br><span class="line">        ...</span><br><span class="line">        isFinished: record.status</span><br><span class="line">    &#125;</span><br><span class="line">&gt;</span><br><span class="line">    &lt;Button&gt;&#123;record.status ? &#x27;查看&#x27; : &#x27;下载&#x27;&#125;&lt;/Button&gt;</span><br><span class="line">&lt;/Link&gt;</span><br></pre></td></tr></table></figure>
+
+<p>业务场景是一个Table的两条选项，一个是 <strong>失败</strong> 时的按钮，一个是 <strong>成功</strong> 时的按钮。当点击 成功 时，会在 <code>route</code> 中根据此时的 <code>record.status</code> 携带一个状态位，然后跳转到相应的路由页面。跳转的路由页面是一个 <code>keep-alive</code> 的页面。</p>
+<h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p>1)、此时在当前的页面下，<code>Button</code> 的点击监听，时间听不到 <code>location.state</code> 值的，为 <code>undefined</code>。也不能在这个<code>Button</code> 点击的时候根据点击的按钮不同而去切换不同的 <code>record.status</code>值，从而进入到不同的页面。因为跳转的路由页面做了 <code>keep-alive</code> 处理。</p>
+<p>所以点击了 “查看” 按钮以后，返回来，再点击 “下载”，跳转的路由页面仍然是 “查看” 的按钮。</p>
+<h4 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h4><p>去掉了路由跳转的页面的 <code>keep-alive</code></p>
+<h1 id="Thursday-完成-爷-gt-父-gt-子-三层组件的数据、方法上下传递"><a href="#Thursday-完成-爷-gt-父-gt-子-三层组件的数据、方法上下传递" class="headerlink" title="Thursday : 完成 爷 -&gt; 父 -&gt; 子 三层组件的数据、方法上下传递"></a><code>Thursday </code>: 完成 爷 -&gt; 父 -&gt; 子 三层组件的数据、方法上下传递</h1><h3 id="方法的向上传递触发-并通过-useRef-去在-爷-调用-特定的-父-的方法。-详细见220908-daily-summary"><a href="#方法的向上传递触发-并通过-useRef-去在-爷-调用-特定的-父-的方法。-详细见220908-daily-summary" class="headerlink" title="方法的向上传递触发 	|	并通过       useRef() 去在 爷 调用 特定的 父 的方法。(详细见220908_daily_summary)"></a>方法的向上传递触发 	|	并通过       <code>useRef()</code> 去在 爷 调用 特定的 父 的方法。(详细见220908_daily_summary)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 子</span><br><span class="line">function Child (props) &#123;</span><br><span class="line">	const &#123;update&#125; = props;</span><br><span class="line">    const updateChild = () =&gt; &#123;</span><br><span class="line">      update();  </span><br><span class="line">    &#125;;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;p onClick=&#123;update&#125;&gt;&lt;/p&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 父</span><br><span class="line">function Father (props, ref) &#123;</span><br><span class="line">	const &#123;onUpdate&#125; = props;</span><br><span class="line">    // 因为在 爷组件中绑定了ref</span><br><span class="line">    // 在 父组件中将想要在 爷组件中调用的方法暴露给 爷组件</span><br><span class="line">    // 使用useImperativeHandle() 钩子函数暴露</span><br><span class="line">    useImperativeHandle(ref, () =&gt; &#123;</span><br><span class="line">        triggerUpdate: () =&gt; ......</span><br><span class="line">    &#125;);</span><br><span class="line">    const updateFather = () =&gt; &#123;</span><br><span class="line">      onUpdate(arg1, arg2);  </span><br><span class="line">    &#125;;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Child update=&#123;updateFather&#125;&gt;&lt;/Child&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line">export default forwardRef(Father); 	// 最后使用forwardRef() 方法包裹 Father 组件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 爷</span><br><span class="line">function Grand (props) &#123;</span><br><span class="line">    const data = [....];</span><br><span class="line">    const [currentFatherComp, serCurrentFatherComp] = useState(0);</span><br><span class="line">    const childRef = useRef();</span><br><span class="line">    const updateChildRef = () =&gt; &#123;</span><br><span class="line">        childRef.current.triggerUpdate();</span><br><span class="line">    &#125;</span><br><span class="line">    const onUpdate = (arg1, arg2) =&gt; &#123;</span><br><span class="line">        setCurrentFatherComp(arg1);</span><br><span class="line">		// ....do something</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">        data?.map((ite, idx) =&gt; &#123;</span><br><span class="line">        	return &lt;Father</span><br><span class="line">                       onUpdate=&#123;onUpdate&#125;</span><br><span class="line">                       key=&#123;idx&#125;</span><br><span class="line">                       ref=&#123;currentFatherComp === ite.id ? childRef : null&#125;</span><br><span class="line">                   	&gt;&lt;/Father&gt;</span><br><span class="line">        &#125;);</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据向下传递"><a href="#数据向下传递" class="headerlink" title="数据向下传递"></a>数据向下传递</h3><p>与方法的向上触发回调是一个道理，通过props传递，这里就不细说了。。。</p>
+<h1 id="Friday-useState-的使用时机、页面查询数据依赖的变化正确的书写位置、关于-项目所使用的模板脚手架"><a href="#Friday-useState-的使用时机、页面查询数据依赖的变化正确的书写位置、关于-项目所使用的模板脚手架" class="headerlink" title="Friday : useState() 的使用时机、页面查询数据依赖的变化正确的书写位置、关于 项目所使用的模板脚手架"></a><code>Friday</code> : <code>useState()</code> 的使用时机、页面查询数据依赖的变化正确的书写位置、关于 项目所使用的模板脚手架</h1><h3 id="1、useState-的使用时机"><a href="#1、useState-的使用时机" class="headerlink" title="1、useState() 的使用时机"></a>1、<code>useState()</code> 的使用时机</h3><p><code>useState()</code> 应该绑定页面的 <code>UI</code> 变化所依赖的数据源。</p>
+<p>。。。</p>
+<h3 id="2、关于项目模板脚手架"><a href="#2、关于项目模板脚手架" class="headerlink" title="2、关于项目模板脚手架"></a>2、关于项目模板脚手架</h3><h3 id="3、关于项目主题包的引入及使用"><a href="#3、关于项目主题包的引入及使用" class="headerlink" title="3、关于项目主题包的引入及使用"></a>3、关于项目主题包的引入及使用</h3><h1 id="一周下来积累的问题点"><a href="#一周下来积累的问题点" class="headerlink" title="一周下来积累的问题点"></a>一周下来积累的问题点</h1><p>1、<code>react</code> 的基本知识点系统学习，因为工作繁重，时间比较少，且直接上手的 <code>react</code> 项目，没有系统性的学习 <code>react</code> ，所以现在还仅仅停留在引入 <code>UI</code> 库中的组件，然后使用一些基本的钩子函数，搭配原生的 <code>JavaScript</code> 函数编写，去编写页面。</p>
+<p>2、前端知识框架体系各个板块知识点的学习。基本没有进展。</p>
+<p>3、前端工程化的知识点。。。</p>
+<p>4、面对不同情况下，人际交往的能力，以及面临不同问题、挫折下，心境的变化。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/17/220917-week-summary/" data-id="cl85bqo8q0003s4nodlbnefyl" data-title="220917_week_summary" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-220908-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/09/08/220908-daily-summary/" class="article-date">
@@ -544,7 +645,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
     </div>
   </div>
 
@@ -554,7 +655,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
+      <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81week-summary/" style="font-size: 20px;">work、react、week_summary</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
     </div>
   </div>
 
@@ -576,6 +677,14 @@
       <ul>
         
           <li>
+            <a href="/2022/09/17/220917-daily-summary/">220917_week_summary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/17/220917-week-summary/">220917_week_summary</a>
+          </li>
+        
+          <li>
             <a href="/2022/09/08/220908-daily-summary/">220908_daily_summary</a>
           </li>
         
@@ -585,14 +694,6 @@
         
           <li>
             <a href="/2022/09/06/220906-daily-summary/">220906_daily_summary</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/06/220905-daily-summary/">220905_daily_summary</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/06/220902-daily-summary/">220902_daily_summary</a>
           </li>
         
       </ul>
