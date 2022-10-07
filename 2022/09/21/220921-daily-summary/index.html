@@ -4,19 +4,16 @@
   <meta charset="utf-8">
   
   
-  <title>220907_daily_summary | Hexo</title>
+  <title>220921_daily_summary | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="FIRST_HALF上午给两个渲染属性设置 useState 时，使用 setXXXX() 时总是会触发到 死循环。还没有来得及深究这个问题，卡了一上午的bug，下午同样的写法，但是没有触发到死循环。只是把两个属性合到了一起，这个bug就消失了。 究其原因，还是对react框架不熟，对react底层实现并不了解，产生了不当的使用方式。 一个有趣的事情那天遇到的，在 function 中生成 jsx">
-<meta property="og:type" content="article">
-<meta property="og:title" content="220907_daily_summary">
-<meta property="og:url" content="http://example.com/2022/09/07/220907-daily-summary/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="220921_daily_summary">
+<meta property="og:url" content="http://example.com/2022/09/21/220921-daily-summary/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="FIRST_HALF上午给两个渲染属性设置 useState 时，使用 setXXXX() 时总是会触发到 死循环。还没有来得及深究这个问题，卡了一上午的bug，下午同样的写法，但是没有触发到死循环。只是把两个属性合到了一起，这个bug就消失了。 究其原因，还是对react框架不熟，对react底层实现并不了解，产生了不当的使用方式。 一个有趣的事情那天遇到的，在 function 中生成 jsx">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-09-07T15:18:20.000Z">
-<meta property="article:modified_time" content="2022-09-07T16:16:29.016Z">
+<meta property="article:published_time" content="2022-09-21T14:48:20.000Z">
+<meta property="article:modified_time" content="2022-09-21T14:48:20.794Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="work、react、">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -74,10 +71,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-220907-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-220921-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/09/07/220907-daily-summary/" class="article-date">
-  <time class="dt-published" datetime="2022-09-07T15:18:20.000Z" itemprop="datePublished">2022-09-07</time>
+    <a href="/2022/09/21/220921-daily-summary/" class="article-date">
+  <time class="dt-published" datetime="2022-09-21T14:48:20.000Z" itemprop="datePublished">2022-09-21</time>
 </a>
     
   </div>
@@ -88,7 +85,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      220907_daily_summary
+      220921_daily_summary
     </h1>
   
 
@@ -96,52 +93,24 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>上午给两个渲染属性设置 <code>useState</code> 时，使用 <code>setXXXX()</code> 时总是会触发到 死循环。还没有来得及深究这个问题，卡了一上午的bug，下午同样的写法，但是没有触发到死循环。只是把两个属性合到了一起，这个bug就消失了。</p>
-<p>究其原因，还是对react框架不熟，对react底层实现并不了解，产生了不当的使用方式。</p>
-<h3 id="一个有趣的事情"><a href="#一个有趣的事情" class="headerlink" title="一个有趣的事情"></a>一个有趣的事情</h3><p>那天遇到的，在 <code>function</code> 中生成 <code>jsx</code> ，带有 <code>className</code> ，想要通过这种方式去配置不同的 <code>className</code> ，但是不生效。</p>
-<p>今天做了类似的事情，却生效了。。</p>
-<p>来对比一下区别。。</p>
-<h5 id="不生效的方式"><a href="#不生效的方式" class="headerlink" title="不生效的方式"></a>不生效的方式</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function XX () &#123;</span><br><span class="line">    return &lt;p style=&#123;&#123; color: textColor, margin: &#x27;0&#x27; &#125;&#125;&gt;XXXXXX&lt;/P&gt; // 动态去给style设置不同的样式值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 在整个函数组件return的jsx中去调用这个函数</span><br><span class="line">return (</span><br><span class="line">	....</span><br><span class="line">    return XX(); //这样返回的</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="生效的方式"><a href="#生效的方式" class="headerlink" title="生效的方式"></a>生效的方式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function XX () &#123;</span><br><span class="line">    arr = [&#x27;YY&#x27;, &#x27;adsasdfasdf&#x27;];</span><br><span class="line">    return (</span><br><span class="line">    	....</span><br><span class="line">        &lt;p className=&#123;styles[arr[0]]&#125;&gt;XXXXXXXX&lt;/p&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="SECOND-HALF"><a href="#SECOND-HALF" class="headerlink" title="SECOND_HALF"></a>SECOND_HALF</h1><p>下午就是调通了两个接口，，，没什么好说的。。。。</p>
-<p>就是根据接口过来的数据进行操作，然后展示。。。</p>
-<h3 id="需要巩固的知识点"><a href="#需要巩固的知识点" class="headerlink" title="需要巩固的知识点"></a>需要巩固的知识点</h3><p>JavaScript的数组迭代和递归方法，重点是它们的返回值是什么样的，</p>
-<p>splice（）方法的使用。</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/07/220907-daily-summary/" data-id="cl7rs74zy0000b8no42657ocm" data-title="220907_daily_summary" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/09/21/220921-daily-summary/" data-id="cl8xzj0mh0000m8no10yq25cl" data-title="220921_daily_summary" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2022/09/08/220908-daily-summary/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          220908_daily_summary
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/09/06/220906-daily-summary/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/09/20/220920-daily-summary/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">220906_daily_summary</div>
+      <div class="article-nav-title">220920_daily_summary</div>
     </a>
   
 </nav>
