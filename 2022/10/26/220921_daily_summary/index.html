@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="FIRST_HALF完成对文字单行显示组件summary。 1234567891011121314151617&#x2F;&#x2F; fatherfunction Father (props) &amp;#123;    ...    const renderCell &#x3D; (value, index, record) &#x3D;&gt; &amp;#123;        return &lt;NoWrapText text&#x3D;&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/10/26/220921_daily_summary/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FIRST_HALF完成对文字单行显示组件summary。 1234567891011121314151617&#x2F;&#x2F; fatherfunction Father (props) &amp;#123;    ...    const renderCell &#x3D; (value, index, record) &#x3D;&gt; &amp;#123;        return &lt;NoWrapText text&#x3D;&amp;#123;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-26T12:38:30.615Z">
+<meta property="article:modified_time" content="2022-10-26T12:35:24.431Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-220921_daily_summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/26/220921_daily_summary/" class="article-date">
+  <time class="dt-published" datetime="2022-10-26T12:38:30.615Z" itemprop="datePublished">2022-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>完成对文字单行显示组件summary。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// father</span><br><span class="line">function Father (props) &#123;</span><br><span class="line">    ...</span><br><span class="line">    const renderCell = (value, index, record) =&gt; &#123;</span><br><span class="line">        return &lt;NoWrapText text=&#123;value&#125; /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Table&gt;</span><br><span class="line">        	&lt;Table.Column</span><br><span class="line">                // cell 是Fusion Design库中Table里每个cell提供的属性，包含参数(value, index, record)</span><br><span class="line">                // value是当前值，也就是这里要操作的值，record是当前行各个属性的对象</span><br><span class="line">             	cell=&#123;renderCell&#125;</span><br><span class="line">             /&gt;</span><br><span class="line">            ...</span><br><span class="line">        &lt;/Table&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// son =&gt; NoWrapText</span><br><span class="line">import &#123; Overlay &#125; from &#x27;@alifd/next&#x27;;</span><br><span class="line">const &#123; Popup &#125; = Overlay;</span><br><span class="line"></span><br><span class="line">function NoWrapText (props) &#123;</span><br><span class="line">    const &#123; text &#125; = props;</span><br><span class="line">    &lt;Popup</span><br><span class="line">        v2</span><br><span class="line">        trigger=&#123;	//触发隐藏折行</span><br><span class="line">            &lt;span&gt;	// 触发时所表现的HTML样式</span><br><span class="line">                &#123;length ?</span><br><span class="line">                    &lt;span&gt;&#123;text.slice(0, length)&#125;...&lt;/span&gt; :</span><br><span class="line">                    &lt;span className=&quot;nowrap&quot;&gt;</span><br><span class="line">                    &#123;text&#125;</span><br><span class="line">                &lt;/span&gt;</span><br><span class="line">                &#125;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        triggerType=&quot;hover&quot;</span><br><span class="line">        placement=&quot;b&quot;</span><br><span class="line">    &gt;</span><br><span class="line">    	&lt;div&gt;&#123;text&#125;&lt;/div&gt;	// hover 时所表现的text</span><br><span class="line">    &lt;/Popup&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="SECOND-HALF"><a href="#SECOND-HALF" class="headerlink" title="SECOND_HALF"></a>SECOND_HALF</h1><p>在当前项目中新开一个路由，新开一个 <code>Layout</code> ，来填装 <code>iframe</code> 。</p>
+<p>1、新开路由</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">// &#x27;编辑&#x27; 按钮点击触发路由变化</span><br><span class="line">// 这里可以使用 ice.js 封装的 Link 组件，然后在 to 属性中加入需要跳转的路由以及search、query、state</span><br><span class="line">// 也可以编写事件，在事件函数里面去处理对应数据，并使用history.push()，参数同 Link组件的 to属性</span><br><span class="line">function PageManage (props) &#123;</span><br><span class="line">    const editPage = (record) =&gt; &#123;</span><br><span class="line">        const &#123; packageName &#125; = appData || &#123;&#125;;</span><br><span class="line">        if (!packageName) &#123;</span><br><span class="line">          Message.error(&#x27;发生错误，请稍后再试!&#x27;);</span><br><span class="line">          return false;</span><br><span class="line">        &#125;</span><br><span class="line">        // 跳转lowcode平台</span><br><span class="line">        editPageId = id;</span><br><span class="line">        history.push(&#123;</span><br><span class="line">          // 在这里写 app/editAppPage 与写 /app/editAppPage跳转的路径位置是不一样的</span><br><span class="line">          //（react-router）基础知识</span><br><span class="line">          // 因为想要一个新开的空白页面，所以要去routerCnfig里面去设置一个新的Layout承接/editAppPage路由</span><br><span class="line">          // 见下一个代码块中的路由配置</span><br><span class="line">          pathname: &#x27;/editAppPage&#x27;,</span><br><span class="line">          search: `?appId=$&#123;appId&#125;&amp;appName=$&#123;appName&#125;`,</span><br><span class="line">          // 在 state里面带上iframe的第三方网站的 地址，这样做 会有安全问题吗？</span><br><span class="line">          state: &#123;</span><br><span class="line">            nocodeUrl: `$&#123;lowCodeUrl&#125;?token=$&#123;getUserTokenFromCookie()&#125;&amp;appId=$&#123;appId&#125;` + 							 `&amp;pageId=$&#123;id&#125;&amp;packageName=$&#123;packageName&#125;`,</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Table&gt;</span><br><span class="line">        	&lt;Table.Column </span><br><span class="line">             	...</span><br><span class="line">                cell=&#123;(value, index, record) =&gt; (</span><br><span class="line">                    &lt;div className=&#123;styles.opt&#125;&gt;</span><br><span class="line">                      &lt;Button type=&quot;primary&quot; text&gt; 设为首页 &lt;/Button&gt;</span><br><span class="line">                      &lt;Divider direction=&quot;ver&quot; /&gt;</span><br><span class="line">                      &lt;Button type=&quot;primary&quot; text onClick=&#123;() =&gt; &#123; editPage(record); &#125;&#125; &gt;</span><br><span class="line">                        编辑</span><br><span class="line">                      &lt;/Button&gt;</span><br><span class="line">                      &lt;Divider direction=&quot;ver&quot; /&gt;</span><br><span class="line">                      &lt;Button type=&quot;primary&quot; text &gt; 提交记录 &lt;/Button&gt;</span><br><span class="line">                      &lt;Divider direction=&quot;ver&quot; /&gt;</span><br><span class="line">                      &lt;Button type=&quot;primary&quot; text &gt; 删除 &lt;/Button&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                  )&#125;</span><br><span class="line">             /&gt;</span><br><span class="line">        &lt;/Table&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">// 2、新开路由配置以及layout</span><br><span class="line">import &#123; lazy &#125; from &#x27;react&#x27;;</span><br><span class="line"></span><br><span class="line">// import NotFound from &#x27;@/components/NotFound&#x27;;</span><br><span class="line">// import &#123; BlankLayout &#125; from &#x27;@/layouts&#x27;;</span><br><span class="line"></span><br><span class="line">import BasicLayout from &#x27;@/layouts/BasicLayout&#x27;;</span><br><span class="line">import UserLayout from &#x27;@/layouts/UserLayout&#x27;;</span><br><span class="line">import editPages from &#x27;@/pages/appPage/components/editAppPage&#x27;; // 为iframe新开的页面位置</span><br><span class="line">import appRoutesConfig from &#x27;@/pages/appPage/routes&#x27;;</span><br><span class="line">import dataSourceRoutesConfig from &#x27;@/pages/DataSource/routes&#x27;;</span><br><span class="line"></span><br><span class="line">import editAppPageConfig from &#x27;./editAppPage&#x27;;</span><br><span class="line">import &#123; ICustomRouterConfig &#125; from &#x27;./typing&#x27;;</span><br><span class="line">import userRoutesConfig from &#x27;./user&#x27;;</span><br><span class="line">import &#123; formatRoutes, deepFlattenRoutes &#125; from &#x27;./utils/formatRoutes&#x27;;</span><br><span class="line"></span><br><span class="line">// 格式化层级Routes</span><br><span class="line">export &#123; formatRoutes, deepFlattenRoutes &#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 扩展 pageConfig, 使其兼容 menus 配置(@alifd/next menu组件、antd proLayout等 )和 RouteTabs 组件.</span><br><span class="line"> * 侧边栏菜单的配置基于 mainRoutesConfig 生成</span><br><span class="line"> * 编辑页面的iframe基于 routerConfig 生成</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">/** 主要的路由 */</span><br><span class="line">export const mainRoutesConfig: ICustomRouterConfig[] = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/app/main&#x27;,</span><br><span class="line">    exact: true,</span><br><span class="line">    component: lazy(() =&gt; import(&#x27;@/pages/Home&#x27;)),</span><br><span class="line">    pageConfig: &#123;</span><br><span class="line">      icon: &#x27;favorites-filling&#x27;,</span><br><span class="line">      title: &#x27;应用管理&#x27;,</span><br><span class="line">      fixed: true,</span><br><span class="line">      hideInMenu: true,</span><br><span class="line">      // keepAlive: true,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/app/add&#x27;,</span><br><span class="line">    exact: true,</span><br><span class="line">    component: lazy(() =&gt; import(&#x27;@/pages/Home/Edit&#x27;)),</span><br><span class="line">    pageConfig: &#123;</span><br><span class="line">      icon: &#x27;favorites-filling&#x27;,</span><br><span class="line">      title: &#x27;创建应用&#x27;,</span><br><span class="line">      fixed: false,</span><br><span class="line">      // hideInMenu: true,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/app/dataSource&#x27;,</span><br><span class="line">    // exact: true,</span><br><span class="line">    // component: lazy(() =&gt; import(&#x27;@/pages/DataSource&#x27;)),</span><br><span class="line">    pageConfig: &#123;</span><br><span class="line">      icon: &#x27;favorites-filling&#x27;,</span><br><span class="line">      title: &#x27;接口管理  &#x27;,</span><br><span class="line">      fixed: false,</span><br><span class="line">      // hideInMenu: true,</span><br><span class="line">    &#125;,</span><br><span class="line">    children: [...dataSourceRoutesConfig],</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/appPage&#x27;,</span><br><span class="line">    pageConfig: &#123;</span><br><span class="line">      icon: &#x27;attachment&#x27;,</span><br><span class="line">      title: &#x27;运营管理&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    children: [...appRoutesConfig],</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/&#x27;,</span><br><span class="line">    redirect: &#x27;/app/main&#x27;,</span><br><span class="line">    component: lazy(() =&gt; import(&#x27;@/pages/Home&#x27;)),</span><br><span class="line">    pageConfig: &#123;</span><br><span class="line">      icon: &#x27;favorites-filling&#x27;,</span><br><span class="line">      title: &#x27;应用管理&#x27;,</span><br><span class="line">      fixed: true,</span><br><span class="line">      hideInMenu: true,</span><br><span class="line">      keepAlive: true,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">const routerConfig: ICustomRouterConfig[] = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/user&#x27;,</span><br><span class="line">    component: UserLayout,</span><br><span class="line">    children: userRoutesConfig,</span><br><span class="line">  &#125;,</span><br><span class="line">  // 为iframe新开的路由</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/editAppPage&#x27;,</span><br><span class="line">    component: editPages,</span><br><span class="line">    children: editAppPageConfig,</span><br><span class="line">  &#125;,</span><br><span class="line">  // &#x27;/&#x27;放在最后</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/&#x27;,</span><br><span class="line">    component: BasicLayout,</span><br><span class="line">    children: mainRoutesConfig,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">export const flatRoutes: ICustomRouterConfig[] = deepFlattenRoutes(mainRoutesConfig, &#x27;/&#x27;).filter(</span><br><span class="line">  (route: ICustomRouterConfig) =&gt; &#123;</span><br><span class="line">    return !!route.component;</span><br><span class="line">  &#125;,</span><br><span class="line">);</span><br><span class="line">export default routerConfig;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 3、editPages，嵌入iframe 的页面</span><br><span class="line">import &#123; useRequest, withRouter, useLocation, history &#125; from &#x27;ice&#x27;;</span><br><span class="line">import &#123; observer &#125; from &#x27;mobx-react&#x27;;</span><br><span class="line">import &#123; /* getUserTokenFromCookie, */ search2obj &#125; from &#x27;@/utils&#x27;;</span><br><span class="line">import styles from &#x27;./index.module.scss&#x27;;</span><br><span class="line"></span><br><span class="line">function Index(props) &#123;</span><br><span class="line">  const location = useLocation();</span><br><span class="line">  const nocodeUrl = location.state?.nocodeUrl; // 从location.state中去读取 传递过来的零码url地址</span><br><span class="line">  const &#123; appId, appName &#125;: any = search2obj(`$&#123;location.search&#125;`);	//search中读取 appId 与 appName</span><br><span class="line">    </span><br><span class="line">  // iframe里装载的是子页面, 父子组件的消息传递，这里通过postMessage传递消息</span><br><span class="line">  // iframe中的子组件通过 window.parent.postMessage()传递事件</span><br><span class="line">  // iframe的父页面，也就是我们这边，通过window 监听 message 事件做出相应处理，如下。</span><br><span class="line">  window.addEventListener(&#x27;message&#x27;, (e) =&gt; &#123;</span><br><span class="line">    // 获取消息内容 data</span><br><span class="line">    const &#123; data &#125; = e;</span><br><span class="line">    const &#123; eventName &#125; = data;</span><br><span class="line">    eventName === &#x27;back&#x27; &amp;&amp; history.push(&#123;</span><br><span class="line">      pathname: &#x27;/appPage/pageManage/main&#x27;,</span><br><span class="line">      search: `?appId=$&#123;appId&#125;&amp;appName=$&#123;appName&#125;`,</span><br><span class="line">    &#125;);</span><br><span class="line">    // console.log(&#x27;接收到iframe消息dddddddddd: &#x27;, data);</span><br><span class="line">  &#125;);</span><br><span class="line">  return (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;iframe id=&quot;nocode-iframe&quot; src=&#123;nocodeUrl&#125; className=&#123;styles.iframeContainer&#125; frameBorder=&quot;0&quot; /&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">export default withRouter(observer(Index));</span><br></pre></td></tr></table></figure>
+
+<h2 id="iframe-嵌入其他网页，及通信"><a href="#iframe-嵌入其他网页，及通信" class="headerlink" title="iframe 嵌入其他网页，及通信"></a><code>iframe</code> 嵌入其他网页，及通信</h2><p>1、<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903901125165064?share_token=dbbdbe7a-d77d-4259-bf6c-a6eed9d60a1e">https://juejin.cn/post/6844903901125165064?share_token&#x3D;dbbdbe7a-d77d-4259-bf6c-a6eed9d60a1e</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://juejin.cn/post/7135085371989164046">https://juejin.cn/post/7135085371989164046</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1c31eeaa6403?u_atoken=9edaf71b-8f07-4914-850f-978c4a7dd8ed&amp;u_asession=01AjcrrkPj3uX6PBJ79RDt9iqN2ELSSxwm1FEhkcLfwv3Sjh1B-4uHA9xrYMXrxS_8X0KNBwm7Lovlpxjd_P_q4JsKWYrT3W_NKPr8w6oU7K9kMmi2sZ4UJsnhyQO58sTJVpSIj1gN2LaYxLWUpsc1qWBkFo3NEHBv0PZUm6pbxQU&amp;u_asig=052J1jEuZGEWMfO-oHpuKvz5I4Zw3FLBp4zRWdWYuF-YsR57znYb5IaGnlzJzh5EaLXDMzkPW95FbsDaMNzsWVTokS_KxBI5zfAGOMyYy3-q0CQUoGyeXiX_EEjhLizGMP4WmF8MAWUFf8simk3qRBRStCL11HS7-_WoCp8WmlicL9JS7q8ZD7Xtz2Ly-b0kmuyAKRFSVJkkdwVUnyHAIJzfajEb0EJwvbOAflX76kk1fqhgCZO68uoToFyC2FZB5-U4HK4hPy3A7RVNDWi_-Gxu3h9VXwMyh6PgyDIVSG1W-uDrrEBST64G-bzPPEvlhnoKwYsY3UV1TNWqkdmJ-OLhXOhIHOxfm5oSYql1s_Db_V3q04sx5tVL3WrR7RdhqGmWspDxyAEEo4kbsryBKb9Q&amp;u_aref=GASQGQg6nJ4ZCZurObu9tdMYPUM=">https://www.jianshu.com/p/1c31eeaa6403?u_atoken=9edaf71b-8f07-4914-850f-978c4a7dd8ed&amp;u_asession=01AjcrrkPj3uX6PBJ79RDt9iqN2ELSSxwm1FEhkcLfwv3Sjh1B-4uHA9xrYMXrxS_8X0KNBwm7Lovlpxjd_P_q4JsKWYrT3W_NKPr8w6oU7K9kMmi2sZ4UJsnhyQO58sTJVpSIj1gN2LaYxLWUpsc1qWBkFo3NEHBv0PZUm6pbxQU&amp;u_asig=052J1jEuZGEWMfO-oHpuKvz5I4Zw3FLBp4zRWdWYuF-YsR57znYb5IaGnlzJzh5EaLXDMzkPW95FbsDaMNzsWVTokS_KxBI5zfAGOMyYy3-q0CQUoGyeXiX_EEjhLizGMP4WmF8MAWUFf8simk3qRBRStCL11HS7-_WoCp8WmlicL9JS7q8ZD7Xtz2Ly-b0kmuyAKRFSVJkkdwVUnyHAIJzfajEb0EJwvbOAflX76kk1fqhgCZO68uoToFyC2FZB5-U4HK4hPy3A7RVNDWi_-Gxu3h9VXwMyh6PgyDIVSG1W-uDrrEBST64G-bzPPEvlhnoKwYsY3UV1TNWqkdmJ-OLhXOhIHOxfm5oSYql1s_Db_V3q04sx5tVL3WrR7RdhqGmWspDxyAEEo4kbsryBKb9Q&amp;u_aref=GASQGQg6nJ4ZCZurObu9tdMYPUM%3D</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/26/220921_daily_summary/" data-id="cl9pmlm7w0000wcno9o0n9o1n" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/26/220929_daily_summary/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/26/221017_daily_summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" rel="tag">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" style="font-size: 10px;">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81week-summary/" style="font-size: 10px;">work、react、week_summary</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/26/221009_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/220930_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/220929_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/220921_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/221017_daily_summary/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

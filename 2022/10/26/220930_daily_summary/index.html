@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="FIRST_HALF上午修改了两个小问题。 对其中一个小问题进行一个记录。 项目的Home页面，在进入的时候，会发出两次 列表请求。 因为首页其实就是一个列表，在进入首页的时候，就会想后端请求数据，然后将数据渲染出来。 这里发送了两次请求，多余了一次请求。。。 经过 debugger , 排查出问题存在的地方，就是一个自己封装的 Input 组件，在页面初始化的时候，也进行了一次 列表数据请求。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/10/26/220930_daily_summary/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FIRST_HALF上午修改了两个小问题。 对其中一个小问题进行一个记录。 项目的Home页面，在进入的时候，会发出两次 列表请求。 因为首页其实就是一个列表，在进入首页的时候，就会想后端请求数据，然后将数据渲染出来。 这里发送了两次请求，多余了一次请求。。。 经过 debugger , 排查出问题存在的地方，就是一个自己封装的 Input 组件，在页面初始化的时候，也进行了一次 列表数据请求。。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-26T12:38:30.618Z">
+<meta property="article:modified_time" content="2022-10-26T12:35:24.553Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-220930_daily_summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/26/220930_daily_summary/" class="article-date">
+  <time class="dt-published" datetime="2022-10-26T12:38:30.618Z" itemprop="datePublished">2022-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>上午修改了两个小问题。</p>
+<p>对其中一个小问题进行一个记录。</p>
+<p>项目的Home页面，在进入的时候，会发出两次 列表请求。</p>
+<p>因为首页其实就是一个列表，在进入首页的时候，就会想后端请求数据，然后将数据渲染出来。</p>
+<p>这里发送了两次请求，多余了一次请求。。。</p>
+<p>经过 <code>debugger</code> , 排查出问题存在的地方，就是一个自己封装的 <code>Input</code> 组件，在页面初始化的时候，也进行了一次 列表数据请求。。。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// Home</span><br><span class="line">import SearchInput from &#x27;@/pages/components/SearchInput&#x27;;	// 自己抽取的Input组件</span><br><span class="line">function Index () &#123;</span><br><span class="line">    const [searchValue, setSearchValue] = useState(&#x27;&#x27;);</span><br><span class="line">  	const &#123; loading, request, data = &#123;&#125; &#125; = useRequest(appInfoService.getAppList);</span><br><span class="line">    const listRequest = useCallback(request, [request]);</span><br><span class="line">    </span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        listRequest(&#123; pageSize, pageNum: 1, param: &#123;&#125; &#125;).then((res) =&gt; &#123;</span><br><span class="line">          _setPagination(res);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;, [listRequest]);</span><br><span class="line">      const onSearch = () =&gt; &#123;</span><br><span class="line">        listRequest(&#123; pageSize, pageNum: 1, param: &#123; appName: searchValue &#125; &#125;).then((res) =&gt; _setPagination(res));</span><br><span class="line">      &#125;;</span><br><span class="line">      const onChange = (value) =&gt; &#123;</span><br><span class="line">        setSearchValue(value);</span><br><span class="line">      &#125;;</span><br><span class="line">    // 。。。</span><br><span class="line">    return (</span><br><span class="line">    	// ...</span><br><span class="line">        &lt;SearchInput</span><br><span class="line">            placeholder=&quot;请输入关键字&quot;</span><br><span class="line">            value=&#123;searchValue&#125;</span><br><span class="line">            onChange=&#123;onChange&#125;</span><br><span class="line">            innerAfterClick=&#123;onSearch&#125;</span><br><span class="line">         /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">// SearchInput 组件</span><br><span class="line">import &#123; memo, useEffect, useRef, useState &#125; from &#x27;react&#x27;;</span><br><span class="line"></span><br><span class="line">import &#123; Icon, Input &#125; from &#x27;@alifd/next&#x27;;</span><br><span class="line">import &#123; noop &#125; from &#x27;lodash-es&#x27;;</span><br><span class="line">import PropTypes from &#x27;prop-types&#x27;;</span><br><span class="line"></span><br><span class="line">import styles from &#x27;./index.module.scss&#x27;;</span><br><span class="line"></span><br><span class="line">const SearchInput = (props) =&gt; &#123;</span><br><span class="line">  const &#123; width, innerAfterClick, value, ...remainProps &#125; = props;</span><br><span class="line">  const oldValue = useRef();</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">     // 之前的错误写法</span><br><span class="line">     // if (!value) &#123;</span><br><span class="line">     //     innerAfterClick();</span><br><span class="line">     // &#125;</span><br><span class="line">    // 清空重新触发查询</span><br><span class="line">    if (!value &amp;&amp; oldValue.current) &#123;</span><br><span class="line">      innerAfterClick();</span><br><span class="line">    &#125;</span><br><span class="line">    oldValue.current = value;</span><br><span class="line">  &#125;, [value]);</span><br><span class="line">  const onKeyWordSearch = (e) =&gt; &#123;</span><br><span class="line">    if (e?.keyCode === 13) &#123;</span><br><span class="line">      innerAfterClick();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  return (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;Input</span><br><span class="line">        &#123;...remainProps&#125;</span><br><span class="line">        value=&#123;value&#125;</span><br><span class="line">        onKeyDown=&#123;onKeyWordSearch&#125;</span><br><span class="line">        innerAfter=&#123;&lt;Icon className=&#123;styles.search&#125; type=&quot;search&quot; size=&quot;xs&quot; onClick=&#123;innerAfterClick&#125; /&gt;&#125;</span><br><span class="line">        style=&#123;&#123; width &#125;&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line">SearchInput.propTypes = &#123;</span><br><span class="line">  onChange: PropTypes.func, // change事件</span><br><span class="line">  placeholder: PropTypes.string, // 提示语</span><br><span class="line">  innerAfterClick: PropTypes.func, // innerAfter 点击事件</span><br><span class="line">  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // 受控值</span><br><span class="line">  width: PropTypes.number,</span><br><span class="line">  hasClear: PropTypes.bool,</span><br><span class="line">  size: PropTypes.oneOf([&#x27;small&#x27;, &#x27;medium&#x27;, &#x27;large&#x27;]),</span><br><span class="line">&#125;;</span><br><span class="line">SearchInput.defaultProps = &#123;</span><br><span class="line">  onChange: noop,</span><br><span class="line">  placeholder: &#x27;请输入&#x27;,</span><br><span class="line">  innerAfterClick: noop,</span><br><span class="line">  value: null,</span><br><span class="line">  width: 240,</span><br><span class="line">  hasClear: true,</span><br><span class="line">  size: &#x27;medium&#x27;,</span><br><span class="line">&#125;;</span><br><span class="line">export default memo(SearchInput);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>因为在页面初始化的时候，会向 <code>searchValue</code> 传递一个 ‘’（空字符串），这是一个赋值过程，而 <code>searchValue</code> 赋值给了 <code>SearchInput</code> 中的 <code>value</code> 值，这里有一个 <code>useEffect()</code>，依赖的是 <code>value</code>，如果 <code>value</code> 变化，就会导致里面的函数体运行。里面的函数 是做了一个简单的判断，如果 value 没有值，就执行 <code>innerAfter()</code> 函数，也就是触发了 请求列表数据。</p>
+<p>这里原来做的简单判断是为了 点击 <code>Input</code> 组件的 ‘ x ‘ 按钮时，清空输入值的同时，也发起一次 列表数据请求的，并渲染列表数据。</p>
+<p>但是，没有考虑到 初始化进入的时候，也有一次赋值操作。。。</p>
+<p>所以要排除掉这种情况，，，</p>
+<p>解决方法是，使用了 <code>React</code> 框架 提供的 <code>useRef()</code> 钩子函数。</p>
+<p>（在之前自己接触并使用到底的 <code>useRef()</code> 中，就是在父组件中注册，然后暴露方法给父组件去调用）。</p>
+<p>这里的使用 <code>useRef()</code>，使用来保存，value的上一次值，如果有值（也就是此时 点击了 ‘x’），才会去 列表数据请求。</p>
+<h1 id="SECOND-HALF"><a href="#SECOND-HALF" class="headerlink" title="SECOND_HALF"></a>SECOND_HALF</h1><p>将原来的两个参数 <code>appId</code> ，<code>appName</code>，从原来的从 <code>url</code> 传递，改变为从 <code>state</code> 传递。</p>
+<p>最开始是为了快速的搭建起项目平台，选择的临时方案就是将这个两个参数通过 <code>history</code> 的 <code>search</code> 传递。。。</p>
+<p>最近对项目进行重构。。将这两个参数通过 <code>store</code>   存储、传递。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 使用appId、appName</span><br><span class="line">import &#123; useSelfStore &#125; from &#x27;@/hooks&#x27;;	//自己封装的一个hook</span><br><span class="line">function Index (props) &#123;</span><br><span class="line">	const [app] = useSelfStore();	// 提取相应app对象</span><br><span class="line">  	const &#123; appId, appName &#125; = app;	// 提取app对象上的属性</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 在hooks中封装 useSelfStore</span><br><span class="line">import &#123; useMemo &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123; history &#125; from &#x27;ice&#x27;;</span><br><span class="line">import &#123; useMobxStores &#125; from &#x27;@/hooks/index&#x27;;</span><br><span class="line">/**</span><br><span class="line"> * 获取缓存 选中的应用信息， 设改变应用信息的方法</span><br><span class="line"> * @returns &#123;[app, setApp]&#125;</span><br><span class="line"> */</span><br><span class="line">const useSelfStore = () =&gt; &#123;</span><br><span class="line">  const &#123; AppStore &#125; = useMobxStores();	//后面涉及到很多useMemo、useContext、TS的一些知识</span><br><span class="line">  const &#123; setApp &#125; = AppStore;</span><br><span class="line">  const app = useMemo(() =&gt; &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      const &#123; app: temp &#125; = AppStore.app?.appName ? AppStore : JSON.parse(sessionStorage.getItem(&#x27;AppStore&#x27;)!);</span><br><span class="line">      if (!temp?.appName) &#123;</span><br><span class="line">        history!.push(&#x27;/&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line">      return temp;</span><br><span class="line">    &#125; catch (e) &#123;</span><br><span class="line">      history!.push(&#x27;/&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [AppStore.app?.appName, AppStore.app?.appIconUrl]); // 名字和图片路径改变</span><br><span class="line">  return [app, setApp];</span><br><span class="line">&#125;;</span><br><span class="line">export default useSelfStore;</span><br></pre></td></tr></table></figure>
+
+<h3 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题"></a>需要解决的问题</h3><p>1、<code>React</code> 基础知识。各种钩子的知识点</p>
+<p>2、<code>TS</code> 掌握。</p>
+<p>3、<code>React</code> 组件渲染顺序。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/26/220930_daily_summary/" data-id="cl9pmlm800002wcnohsq97agd" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/26/221009_daily_summary/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/26/220929_daily_summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" rel="tag">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" style="font-size: 10px;">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81week-summary/" style="font-size: 10px;">work、react、week_summary</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/26/221009_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/220930_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/220929_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/220921_daily_summary/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/26/221017_daily_summary/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

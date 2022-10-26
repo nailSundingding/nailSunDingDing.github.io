@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>220921_daily_summary | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="220921_daily_summary">
-<meta property="og:url" content="http://example.com/2022/09/21/220921-daily-summary/index.html">
+  <meta name="description" content="FIRST_HALF这两天完成两个新增的业务需求，遇到一些问题，特此记录。 1、业务场景： 点击切换侧边栏的 app, 会切换 store 中的 appId 等值，主内容区域会根据 appId 的改变，去切换到不同的 app 应用。 12345678import &amp;#123; memo &amp;#125; from &amp;#x27;react&amp;#x27;;import &amp;#123; useSelfStore">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/10/26/221009_daily_summary/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FIRST_HALF这两天完成两个新增的业务需求，遇到一些问题，特此记录。 1、业务场景： 点击切换侧边栏的 app, 会切换 store 中的 appId 等值，主内容区域会根据 appId 的改变，去切换到不同的 app 应用。 12345678import &amp;#123; memo &amp;#125; from &amp;#x27;react&amp;#x27;;import &amp;#123; useSelfStore">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-09-21T14:48:20.000Z">
-<meta property="article:modified_time" content="2022-09-21T14:48:20.794Z">
+<meta property="article:published_time" content="2022-10-26T12:38:30.620Z">
+<meta property="article:modified_time" content="2022-10-26T12:35:24.855Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -71,33 +73,34 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-220921-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-221009_daily_summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/09/21/220921-daily-summary/" class="article-date">
-  <time class="dt-published" datetime="2022-09-21T14:48:20.000Z" itemprop="datePublished">2022-09-21</time>
+    <a href="/2022/10/26/221009_daily_summary/" class="article-date">
+  <time class="dt-published" datetime="2022-10-26T12:38:30.620Z" itemprop="datePublished">2022-10-26</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      220921_daily_summary
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>这两天完成两个新增的业务需求，遇到一些问题，特此记录。</p>
+<p>1、业务场景： 点击切换侧边栏的 <code>app</code>, 会切换 <code>store</code> 中的 <code>appId</code> 等值，主内容区域会根据 <code>appId</code> 的改变，去切换到不同的 <code>app</code> 应用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; memo &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123; useSelfStore &#125; from &#x27;@/hooks&#x27;;</span><br><span class="line">function Index (props) &#123;</span><br><span class="line">    const [app] = useSelfStore();</span><br><span class="line">    const &#123; appId, appName &#125; = app;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">export default memo(Index);</span><br></pre></td></tr></table></figure>
+
+<p>这样是监听不到 <code>appId</code> 的变化。</p>
+<p>后来改成这样就可以了。。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observer &#125; from &#x27;mobx-react&#x27;;</span><br><span class="line">import &#123; useSelfStore &#125; from &#x27;@/hooks&#x27;;</span><br><span class="line">function Index (props) &#123;</span><br><span class="line">    const [app] = useSelfStore();</span><br><span class="line">    const &#123; appId, appName &#125; = app;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">export default observer(Index);</span><br></pre></td></tr></table></figure>
+
+<p>改变成 <code>observer</code> 包裹 <code>Index</code> 函数就可以监听到 <code>appId</code> 的变化。。。</p>
+<h3 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题:"></a>需要解决的问题:</h3><p>1、为什么在每一个组件的最后使用 <code>export default observer(Index)</code> , 要么使用 <code>memo()</code> ，要么使用 <code>observer()</code> 去包裹要暴露出去的组件函数。</p>
+<p>2、<code>memo()</code> 与 <code>observer()</code> 之间的区别，以及作用。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/21/220921-daily-summary/" data-id="cl8xzj0mh0000m8no10yq25cl" data-title="220921_daily_summary" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/10/26/221009_daily_summary/" data-id="cl9pmlm820004wcno6o4w70ej" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -108,9 +111,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2022/09/20/220920-daily-summary/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/10/26/220930_daily_summary/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">220920_daily_summary</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
@@ -149,7 +152,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
     </div>
   </div>
 
@@ -162,23 +165,23 @@
       <ul>
         
           <li>
-            <a href="/2022/09/21/220921-daily-summary/">220921_daily_summary</a>
+            <a href="/2022/10/26/221009_daily_summary/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2022/09/20/220920-daily-summary/">220920_daily_summary</a>
+            <a href="/2022/10/26/220930_daily_summary/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2022/09/17/220917-week-summary/">220917_week_summary</a>
+            <a href="/2022/10/26/220929_daily_summary/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2022/09/08/220908-daily-summary/">220908_daily_summary</a>
+            <a href="/2022/10/26/220921_daily_summary/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2022/09/07/220907-daily-summary/">220907_daily_summary</a>
+            <a href="/2022/10/26/221017_daily_summary/">(no title)</a>
           </li>
         
       </ul>

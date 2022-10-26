@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Tag: work、react、week_summary | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="description" content="FIRST_HALF修改一些业务逻辑， 使用Fusion Design 的 Input 时，设置 Input 的默认值，也就是 defaultValue 属性的值，， 原本的设想时，使用 useEffect(()&#x3D;&gt;&amp;#123;&amp;#125;, []) 在初始时，去后台请求到 appInfo 的值，然后根据这个 appInfo 中的值来决定怎样给 Input 设置 defaultValue 。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/work%E3%80%81react%E3%80%81week-summary/index.html">
+<meta property="og:url" content="http://example.com/2022/10/26/221010_daily_summary/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FIRST_HALF修改一些业务逻辑， 使用Fusion Design 的 Input 时，设置 Input 的默认值，也就是 defaultValue 属性的值，， 原本的设想时，使用 useEffect(()&#x3D;&gt;&amp;#123;&amp;#125;, []) 在初始时，去后台请求到 appInfo 的值，然后根据这个 appInfo 中的值来决定怎样给 Input 设置 defaultValue 。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-26T12:38:30.602Z">
+<meta property="article:modified_time" content="2022-10-26T12:35:25.774Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -69,39 +73,58 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/09/17/220917-week-summary/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-09-17T01:53:44.000Z" itemprop="datePublished">Sep 17</time>
+        <section id="main"><article id="post-221010_daily_summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/26/221010_daily_summary/" class="article-date">
+  <time class="dt-published" datetime="2022-10-26T12:38:30.602Z" itemprop="datePublished">2022-10-26</time>
 </a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/17/220917-week-summary/">220917_week_summary</a>
-    </h1>
-  
-
-    </header>
+    
   </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>修改一些业务逻辑，</p>
+<p>使用<code>Fusion Design</code> 的 <code>Input</code> 时，设置 <code>Input</code> 的默认值，也就是 <code>defaultValue</code> 属性的值，，</p>
+<p>原本的设想时，使用 <code>useEffect(()=&gt;&#123;&#125;, [])</code> 在初始时，去后台请求到 <code>appInfo</code> 的值，然后根据这个 <code>appInfo</code> 中的值来决定怎样给 <code>Input</code> 设置 <code>defaultValue</code> 。</p>
+<p>但是事与愿违。。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function Index (props) &#123;</span><br><span class="line">    const &#123; request: getAppInfo, data: appInfo = &#123;&#125; &#125; = useRequest(AppService.getAppInfo);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">    // todo 缓存</span><br><span class="line">    getAppInfo(&#123; id: appId &#125;);</span><br><span class="line">    console.log(appInfo);	// 此时的appInfo 为 &#123;&#125;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  ...</span><br><span class="line">  return (</span><br><span class="line">  	&lt;&gt;</span><br><span class="line">      &lt;FormItem label=&quot;应用版本号&quot;&gt;</span><br><span class="line">          &lt;Input</span><br><span class="line">            // defaultValue=&#123;reqPrams.versionNum&#125;</span><br><span class="line">            defaultValue=&#123;appInfo.uiVersion ? appInfo.version : reqPrams.versionNum&#125; // appInfo.uiVersion的值是一进来的值,为 &#123;&#125;，取值将一直为 reqParams。versionNum</span><br><span class="line">          /&gt;</span><br><span class="line">      &lt;/FormItem&gt;</span><br><span class="line">      &lt;FormItem label=&quot;UI版本号&quot;&gt;</span><br><span class="line">          &lt;Input</span><br><span class="line">            // defaultValue=&#123;reqPrams.versionNum&#125;</span><br><span class="line">            defaultValue=&#123;appInfo.uiVersion ? appInfo.uiVersion : 1&#125; // appInfo.uiVersion的值是一进来的值,为 &#123;&#125;, defaultValue的值将一直为1</span><br><span class="line">          /&gt;</span><br><span class="line">      &lt;/FormItem&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;FormItem label=&quot;UI版本号&quot;&gt;	// 这样可以得到查询后的值</span><br><span class="line">          &lt;div className=&#123;styles.nameItem&#125;&gt;&#123;appInfo.uiVersion ? Number(appInfo.uiVersion) + 1 : 1&#125;		   &lt;/div&gt;</span><br><span class="line">        &lt;/FormItem&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="需要解决的问题："><a href="#需要解决的问题：" class="headerlink" title="需要解决的问题："></a>需要解决的问题：</h3><p>1、当前脚手架项目中tab如何在切换时，存储 <code>location.state</code> 的值。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/26/221010_daily_summary/" data-id="cl9pmlm810003wcno8e54c6e2" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/26/221011_daily_summary/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/20/220920-daily-summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">220920_daily_summary</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
