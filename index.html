@@ -71,6 +71,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-KnowledgeSystem" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/07/KnowledgeSystem/" class="article-date">
+  <time class="dt-published" datetime="2022-11-07T14:00:01.000Z" itemprop="datePublished">2022-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/07/KnowledgeSystem/">KnowledgeSystem</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="C:\Users\Administrator\Desktop\知识体系.png" alt="知识体系"></p>
+<h1 id="一、HTML-CSS-CSS3"><a href="#一、HTML-CSS-CSS3" class="headerlink" title="一、HTML, CSS, CSS3"></a>一、<code>HTML, CSS, CSS3</code></h1><h2 id="1、HTML"><a href="#1、HTML" class="headerlink" title="1、HTML"></a>1、<code>HTML</code></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h, p, a(href、target(_self, _blank, #target)), SEO</span><br><span class="line">base, lang, img(width、height、src、alt), ul&gt;li, dl&gt;dt dd</span><br><span class="line"><span class="symbol">&amp;nbsp;</span> <span class="symbol">&amp;lt;</span> <span class="symbol">&amp;gt;</span> <span class="symbol">&amp;quot;</span> <span class="symbol">&amp;amp;</span></span><br><span class="line">strong, em, ins, del</span><br><span class="line">b,		i,	u,	 s</span><br><span class="line">div + span</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、CSS"><a href="#2、CSS" class="headerlink" title="2、CSS"></a>2、<code>CSS</code></h2><h3 id="1、内联样式、内部样式、外部样式"><a href="#1、内联样式、内部样式、外部样式" class="headerlink" title="1、内联样式、内部样式、外部样式"></a>1、内联样式、内部样式、外部样式</h3><p>​	选择器 { 属性名称: 属性值; }</p>
+<h3 id="2、text-font-color-background-vertical-inline-block-inlin-block"><a href="#2、text-font-color-background-vertical-inline-block-inlin-block" class="headerlink" title="2、text, font, color, background, vertical, inline,block,inlin-block"></a>2、<code>text, font, color, background, vertical, inline,block,inlin-block</code></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">text:	<span class="built_in">-align</span>(left,center,right,justify);</span><br><span class="line">	 	-indent;</span><br><span class="line">		-decoraction(<span class="attribute">top</span>-line,line-through,underline,<span class="attribute">none</span>);</span><br><span class="line"><span class="attribute">font</span>:	style weight size/line-height family;</span><br><span class="line">		(<span class="attribute">normal</span>, litalic, oblique) (lighter, light, <span class="attribute">normal</span>, bold, bolder  <span class="number">400</span> - <span class="number">600</span> - Infinite)</span><br><span class="line"><span class="attribute">color</span>:	<span class="built_in">ragba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">5</span>)、<span class="number">#ffff00</span>、red;</span><br><span class="line"><span class="attribute">background</span>: color url 				repeat 						position/size;</span><br><span class="line">					（no-repeat,repeatX,repeatY,repeat:↔ ↕）		(➡ ⬇) （↔ ↕）</span><br><span class="line">vertical-align: top; middle; base-line; <span class="attribute">bottom</span>;</span><br><span class="line">inline元素、block元素、inline-block元素。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、盒子模型"><a href="#3、盒子模型" class="headerlink" title="3、盒子模型"></a>3、盒子模型</h3><p><code>margin, border, padding, content</code></p>
+<p>外边距穿透 与 外边距折叠 （如何清除外边距穿透以及外边距折叠）</p>
+<p>怪异盒模型（<code>box-sizing: border-box;</code>）</p>
+<h3 id="4、CSS选择器权重及复合选择器"><a href="#4、CSS选择器权重及复合选择器" class="headerlink" title="4、CSS选择器权重及复合选择器"></a>4、<code>CSS</code>选择器权重及复合选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 权重</span><br><span class="line">通配符、继承:		<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span></span><br><span class="line">元素、标签:		<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">1</span></span><br><span class="line">类、伪类:	 	<span class="number">0</span>	<span class="number">0</span>	<span class="number">1</span>	<span class="number">0</span></span><br><span class="line">ID:			  <span class="number">0</span>	   <span class="number">1</span>   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line"><span class="meta">!important</span>:  无穷大</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/07/KnowledgeSystem/" data-id="cla6vx2480000scno0k82c7vb" data-title="KnowledgeSystem" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Knowledge-System/" rel="tag">Knowledge System</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-221009_daily_summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/26/221009_daily_summary/" class="article-date">
@@ -490,104 +541,6 @@
 
 
   
-    <article id="post-220908-daily-summary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/08/220908-daily-summary/" class="article-date">
-  <time class="dt-published" datetime="2022-09-08T14:12:07.000Z" itemprop="datePublished">2022-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/08/220908-daily-summary/">220908_daily_summary</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="FIRST-HALF"><a href="#FIRST-HALF" class="headerlink" title="FIRST_HALF"></a>FIRST_HALF</h1><p>上午调通了两个接口。</p>
-<h3 id="上午就是-爷-gt-父-gt-子-三级组件之间通过-prop-传递数据，以及回调函数-的具体实践。"><a href="#上午就是-爷-gt-父-gt-子-三级组件之间通过-prop-传递数据，以及回调函数-的具体实践。" class="headerlink" title="上午就是 爷 -&gt; 父 -&gt; 子 三级组件之间通过 prop 传递数据，以及回调函数 的具体实践。"></a>上午就是 <strong>爷 -&gt; 父 -&gt; 子</strong> 三级组件之间通过 <code>prop</code> 传递数据，以及回调函数 的具体实践。</h3><h4 id="1、传递回调函数"><a href="#1、传递回调函数" class="headerlink" title="1、传递回调函数"></a>1、传递回调函数</h4><p><code>爷</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function GrandFather () &#123;</span><br><span class="line">    const updateChange = (arg1, arg2) =&gt; &#123;...&#125;</span><br><span class="line">    return (</span><br><span class="line">        &lt;Father update=&#123;updateChange&#125; /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>父</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Father (props) &#123;</span><br><span class="line">    const &#123;update&#125; = props;</span><br><span class="line">    const onUpdate = () =&gt; &#123;</span><br><span class="line">		update(oldId, newId);	// oldId、newId 将自动作为arg1、arg2传递给 updateChange(arg1, arg2)</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Son triggerUpdate=&#123;onUpdate&#125; /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>子</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Son (props) &#123;</span><br><span class="line">    const &#123;triggerUpdate&#125; = props;</span><br><span class="line">    const XXX = () =&gt; &#123;</span><br><span class="line">        triggerUpdate();</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Son onXXX=&#123;XXX&#125; /&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面是向下传递方法，在子组件中去触发父组件中的函数并传递参数，修改父组件中的数据。</p>
-<p>兴许有更好的方法，但依照自己现阶段仅掌握到的<code>React</code> 知识，通过 <code>props</code>, <code>useState</code>，<code>useEffect</code>打出的组合拳，来实现这样的数据流通。</p>
-<h4 id="2、传递数据"><a href="#2、传递数据" class="headerlink" title="2、传递数据"></a>2、传递数据</h4><p><code>爷</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function GrandFather () &#123;</span><br><span class="line">    const [updateSucceed, setUpdateSucceed] = useState(false);</span><br><span class="line">    return (</span><br><span class="line">    	&lt;Father updateSucceed=&#123;updateSucceed&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>父</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Father （props） &#123;</span><br><span class="line">    const &#123; updateSucceed &#125; = props;</span><br><span class="line">  	const [isSucceed, setIsSucceed] = useState(false);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        setIsSucceed(updateSucceed);</span><br><span class="line">        console.log(&#x27;传递下来的updateSucceed的值为：&#x27;, updateSucceed);</span><br><span class="line">        console.log(&#x27;传递之前isSucceed的值为：&#x27;, isSucceed);</span><br><span class="line">    &#125;, [updateSucceed]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在 <code>子</code> 中进行类似于 <code>父</code>中同样的操作。。。。</p>
-<p>可以发现这样并没有把值传递下去。。。。</p>
-<h4 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h4><p>就是这个传值的问题。。。</p>
-<h1 id="220909-daily-summary"><a href="#220909-daily-summary" class="headerlink" title="220909_daily_summary"></a>220909_daily_summary</h1><h4 id="3、接着看这个方法传递回调-与-数据传递"><a href="#3、接着看这个方法传递回调-与-数据传递" class="headerlink" title="3、接着看这个方法传递回调 与 数据传递"></a>3、接着看这个方法传递回调 与 数据传递</h4><p>子							父							爷</p>
-<p><code>handleClick() =&gt; onUpdate() -&gt;</code> <code>onUpdate()=&gt; update(id, id2) -&gt;</code> <code>update(id, id2)=&gt; updateChange(id, id2)</code> </p>
-<p>​															发送 <code>id,id2</code> 数据，等待响应，成功后</p>
-<p>​															返回成功标志位</p>
-<p><code>onSucceed</code>		<code>&lt;---</code>		<code>isSucceed</code>		<code>&lt;---</code>		<code>updateSucceed</code> </p>
-<p>这个过程数据是往下传递了数据的。。</p>
-<h5 id="（1）只是下面在-子-组件中做的处理是不对的，"><a href="#（1）只是下面在-子-组件中做的处理是不对的，" class="headerlink" title="（1）只是下面在 子 组件中做的处理是不对的，"></a>（1）只是下面在 <code>子</code> 组件中做的处理是不对的，</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const handleUpdate = () =&gt; &#123;</span><br><span class="line">    switch (currentUpdateHint[0]) &#123;</span><br><span class="line">        case &#x27;update&#x27;:</span><br><span class="line">            setCurrentUpdateHint(updateMap[1]);</span><br><span class="line">            onUpdate();</span><br><span class="line">            //在子组件中设置onSucceed承接从父组件传递过来的状态</span><br><span class="line">            //在useState()中设置的onSucceed感觉也不能捕捉到onSucceed的变化</span><br><span class="line">            //其实是变化的了，只是这种调用方式是错误的</span><br><span class="line">            //应该是在外层去监听onSucceed的变化，然后据此去做出响应是的变化</span><br><span class="line">            onSucceed &amp;&amp; setTimeout(() =&gt; &#123;</span><br><span class="line">                setCurrentUpdateHint(updateMap[2]);</span><br><span class="line">            &#125;, 300);</span><br><span class="line">            break;</span><br><span class="line">        case &#x27;updating&#x27;:</span><br><span class="line">            setCurrentUpdateHint(updateMap[1]);</span><br><span class="line">            break;</span><br><span class="line">        case &#x27;updated&#x27;:</span><br><span class="line">            setUpdateSucceeded(true);</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">const [onSucceed, setOnSucceed] = useState(false);</span><br><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    setOnSucceed(isSucceed);</span><br><span class="line">    console.log(&#x27;此时子组件中isSucceed的值为：&#x27;, isSucceed);</span><br><span class="line">    // isSucceed &amp;&amp; setCurrentUpdateHint(updateMap[2]);</span><br><span class="line">&#125;, [isSucceed]);</span><br><span class="line"></span><br><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    console.log(&#x27;此时子组件中onSucceed的值为：&#x27;, onSucceed);</span><br><span class="line">    //无论在isSucceed或者是onSucceed的useEffect中去改变currentUpdateHint值</span><br><span class="line">    //都会将所有的卡片值的状态的都改变</span><br><span class="line">    //为什么？</span><br><span class="line">    //因为这里的在最高层——&quot;爷&quot;一层级中，变化后，设定的成功标志的值是updateSucceed</span><br><span class="line">    //updateSucceed的值会分发到所有&quot;父&quot;组件中，继而传递到子组件</span><br><span class="line">    //想要每一个子组件发生的变化相互独立，就要在&quot;爷&quot;组件触发发送数据，并得到成功标志后</span><br><span class="line">    //成功标志应该去 仅 绑定到点击了更新的子组件的onSucceed，</span><br><span class="line">    //而非直接赋值给爷组件的 updateSucceed，然后直接分发到每一个子组件中</span><br><span class="line">    onSucceed &amp;&amp; setCurrentUpdateHint(updateMap[2]);</span><br><span class="line">&#125;, [onSucceed]);</span><br><span class="line">const handleUpdate = () =&gt; &#123;</span><br><span class="line">    switch (currentUpdateHint[0]) &#123;</span><br><span class="line">        case &#x27;update&#x27;:</span><br><span class="line">            setCurrentUpdateHint(updateMap[1]);</span><br><span class="line">            onUpdate();</span><br><span class="line">            break;</span><br><span class="line">        case &#x27;updating&#x27;:</span><br><span class="line">            setCurrentUpdateHint(updateMap[1]);</span><br><span class="line">            break;</span><br><span class="line">        case &#x27;updated&#x27;:</span><br><span class="line">            setUpdateSucceeded(true);</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h5 id="（2）在父组件触发-特定子组件的方法"><a href="#（2）在父组件触发-特定子组件的方法" class="headerlink" title="（2）在父组件触发 特定子组件的方法"></a>（2）在父组件触发 特定子组件的方法</h5><p>回想一下上面的问题，在 <code>子</code> 组件中点击更新按钮，子组件将会调用方法，并依次去触发 <code>父</code> 、<code>爷</code> 组件的方法，最后在 <code>爷</code> 组件去发送数据给后台，在后台返回一个 是否成功的标志之后，再将这个标志从 <code>爷</code> 依次传递给 <code>父</code>、<code>子</code>。最后子再根据这个 是否成功的标志位，去做出相应的变化。</p>
-<p>第一次尝试，是在 <code>爷</code> 组件直接设置一个 <code>updateSucceed</code> 标志位（<code>true</code> &#x2F; <code>false</code> )，代表成功与否，然后再将这个标志位分发到 <code>父</code> ，再由 <code>父</code> 传递给 <code>子</code> 。再<code>爷</code> 这里有个操作：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;mockTableData.baseServices?.map((item) =&gt; (</span><br><span class="line">    &lt;Cell colSpan=&#123;3&#125; key=&#123;item.id&#125;&gt;</span><br><span class="line">        &lt;ServiceItem</span><br><span class="line">            item=&#123;&#123;</span><br><span class="line">                ...item,</span><br><span class="line">            &#125;&#125;</span><br><span class="line">            change=&#123;switchChange&#125;</span><br><span class="line">            update=&#123;updateChange&#125;</span><br><span class="line">            //ref=&#123;childRef&#125;</span><br><span class="line">            updateSucceed=&#123;updateSucceed&#125;</span><br><span class="line">            canSwitch=&#123;false&#125;</span><br><span class="line">            checked</span><br><span class="line">            /&gt;</span><br><span class="line">    &lt;/Cell&gt;</span><br><span class="line">))&#125;</span><br></pre></td></tr></table></figure>
-
-<p>能看到 <code>爷</code> 是根据一个数组去 <code>map</code> 出很多的 <code>父</code> ，所以 <code>updateSucceed</code> 会传递给所有的父组件，，，</p>
-<p>那么这里再，某个特定的 <code>子</code> 组件中触发 更新事件，进而触发特定的父组件发生变化，进而触发 <code>爷</code> 发生更新标志位，像上面 这样的 <code>updateSucceed=&#123;updateSucceed&#125;</code>，如果直接去更改<code>爷</code> 组件一级的状态，会导致所有的 <code>父</code> 组件的标志位发生改变，而出现，点击某一个 <code>子</code> 组件，获得后台返回的状态后，所有的 <code>子</code> 组件都发生了变化。</p>
-<p><strong>现在放弃上面的思路，不直接去改变<code>爷</code> 组件中的<code>updateSucceed</code> 标志位，而是在<code>爷</code> 组件收到后台响应后，去触发对应的<code>父</code> 组件状态变化。</strong></p>
-<p>那么 <code>爷</code> 怎么去单独触发 <code>父</code> 组件中的状态变化呢？</p>
-<p>这里想到的是 <code>useRef()</code>，使用 <code>爷</code> 组件去调用 <code>子</code> 组件中的方法，从而单独改变相应状态。</p>
-<p>(<a target="_blank" rel="noopener" href="https://www.jb51.net/article/260197.htm">https://www.jb51.net/article/260197.htm</a>)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//爷</span><br><span class="line">function GrandFather () &#123;</span><br><span class="line">    ...</span><br><span class="line">    const childRef = useRef();</span><br><span class="line">    const updateChildState = () =&gt; &#123;</span><br><span class="line">        childRef.current.setUpdateSucceed(true);</span><br><span class="line">    &#125;;</span><br><span class="line">    // 后台返回数据后 去调用 updateChildState()</span><br><span class="line">    const onReceiveData = （）=&gt; &#123;</span><br><span class="line">        updateChildState();</span><br><span class="line">    &#125;;</span><br><span class="line">    return (	//在 父 组件中去绑定ref</span><br><span class="line">        。。。</span><br><span class="line">    	&#123;mockTableData.baseServices?.map((item) =&gt; (</span><br><span class="line">            &lt;Cell colSpan=&#123;3&#125; key=&#123;item.id&#125;&gt;</span><br><span class="line">                &lt;ServiceItem</span><br><span class="line">                    item=&#123;&#123;</span><br><span class="line">                        ...item,</span><br><span class="line">                    &#125;&#125;</span><br><span class="line">                    change=&#123;switchChange&#125;</span><br><span class="line">                    update=&#123;updateChange&#125;</span><br><span class="line">                    ref=&#123;childRef&#125;</span><br><span class="line">                    //updateSucceed=&#123;updateSucceed&#125;</span><br><span class="line">                    canSwitch=&#123;false&#125;</span><br><span class="line">                    checked</span><br><span class="line">                    /&gt;</span><br><span class="line">            &lt;/Cell&gt;</span><br><span class="line">        ))&#125;</span><br><span class="line">		。。。</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 父</span><br><span class="line">function Father (props, ref) &#123;</span><br><span class="line">    const [isSucceed, setIsSucceed] = useState(false);</span><br><span class="line">    useImperactiveHandle(ref, () =&gt; (&#123;	//暴露给 &#x27;爷&#x27; 组件的方法</span><br><span class="line">        setUpdateSucceed: (flag) =&gt; setIsSucceed(flag);</span><br><span class="line">    &#125;));</span><br><span class="line">    return (</span><br><span class="line">    	...</span><br><span class="line">        &lt;div className=&#123;styles.checkbox&#125;&gt;</span><br><span class="line">          &lt;BaseServiceSetting</span><br><span class="line">            item=&#123;&#123;</span><br><span class="line">              hasUpdate: item.id !== item.latestServiceId,</span><br><span class="line">              hasSetting: false,</span><br><span class="line">            &#125;&#125;</span><br><span class="line">            onUpdate=&#123;onUpdate&#125;</span><br><span class="line">            isSucceed=&#123;isSucceed&#125; //在 子 组件中绑定 父 组件的isSucceed值</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        ...</span><br><span class="line">        </span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">export default forwardRef(Index);	//</span><br></pre></td></tr></table></figure>
-
-<p>这样可以单独触发 特定的 <code>父</code> 组件中的事件，来单独的改变状态。</p>
-<p>但是还有问题。。。</p>
-<p><strong>这个是会发现，不论你点击哪个子组件的更新按钮，<code>爷</code> 组件都只会去调用最后一个 <code>父</code> 组件的<code>setUpdateSucceed</code> 方法。</strong></p>
-<p>也就是在<code>父</code> 组件中使用 <code>ref=&#123;ChildRef&#125;</code> ，<code>map</code> 下来之后，绑定的是最后的那个 <code>父</code> 组件。</p>
-<h5 id="3-子-触发事件时，将特定的父-组件绑定给-爷-组件的-childRef"><a href="#3-子-触发事件时，将特定的父-组件绑定给-爷-组件的-childRef" class="headerlink" title="(3) 子 触发事件时，将特定的父 组件绑定给 爷 组件的 childRef"></a>(3) <code>子</code> 触发事件时，将特定的<code>父</code> 组件绑定给 <code>爷</code> 组件的 <code>childRef</code></h5><p>现在出现问题是 <code>爷</code> 使用了 <code>childRef</code> 以后，<code>map</code> 循环绑定的时最后一个 <code>父</code> 组件，，，</p>
-<p>现阶段想到的解决办法是，在 <code>子</code> 组件触发了 点击事件以后，会传递更新操作，会一层层的函数回调，<code>父</code> 组件会将点击的组件 <code>id</code> 与 <code>latestServiceId</code> 传递上来， 给到<code>爷</code> 组件。 传递上来时，在 <code>爷</code> 组件设置一个参数接收 这个 <code>id</code>，然后在<code>爷</code> 组件的 <code>jsx</code> 中给 <code>父</code> 组件的 <code>ref</code> 绑上 <code>childRef</code> 值。</p>
-<p>看代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">//爷</span><br><span class="line">function GrandFather () &#123;</span><br><span class="line">    ...</span><br><span class="line">      // 当前的子组件id</span><br><span class="line">  	const [currentChildId, setCurrentChildId] = useState(0);</span><br><span class="line">    </span><br><span class="line">    const childRef = useRef();</span><br><span class="line">    const updateChildState = (flag) =&gt; &#123;</span><br><span class="line">        childRef.current.setUpdateSucceed(flag);</span><br><span class="line">    &#125;;</span><br><span class="line">    const updateChange = (oldId, newId) =&gt; &#123;</span><br><span class="line">    	// 在此处绑定上发生变化的子组件的为ChildRef</span><br><span class="line">    	setCurrentChildId(oldId);</span><br><span class="line">        </span><br><span class="line">         updateService(&#123;</span><br><span class="line">             appId,</span><br><span class="line">             baseServiceIds: baseTempArr,</span><br><span class="line">             businessServiceIds: businessServiceDefault,</span><br><span class="line">         &#125;).then((res) =&gt; &#123;</span><br><span class="line">             updateChildState(res); // 后台返回数据后 去调用 updateChildState(flag)</span><br><span class="line">         &#125;);</span><br><span class="line">        setBaseServiceIds(baseTempArr);</span><br><span class="line">  	&#125;;</span><br><span class="line">    return (	//在 父 组件中去绑定ref</span><br><span class="line">        。。。</span><br><span class="line">    	&#123;mockTableData.baseServices?.map((item) =&gt; (</span><br><span class="line">            &lt;Cell colSpan=&#123;3&#125; key=&#123;item.id&#125;&gt;</span><br><span class="line">                &lt;ServiceItem</span><br><span class="line">                    item=&#123;&#123;</span><br><span class="line">                        ...item,</span><br><span class="line">                    &#125;&#125;</span><br><span class="line">                    change=&#123;switchChange&#125;</span><br><span class="line">                    update=&#123;updateChange&#125;</span><br><span class="line">                    // 当 currentChildId 等同于 item.id 时，给 组件设置上 childRef属性</span><br><span class="line">                    // 其余时候设置的时null（现阶段时设置为null，暂时没有出问题）</span><br><span class="line">                    ref=&#123;((item.id === currentChildId) &amp;&amp; childRef) || null&#125;</span><br><span class="line">                    updateSucceed=&#123;updateSucceed&#125;</span><br><span class="line">                    canSwitch=&#123;false&#125;</span><br><span class="line">                    checked</span><br><span class="line">                    /&gt;</span><br><span class="line">            &lt;/Cell&gt;</span><br><span class="line">        ))&#125;</span><br><span class="line">		。。。</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>至此问题得到解决。。。</p>
-<p>其实这个问题有很多更好的更简单的解决办法，，，</p>
-<p>因为自己刚开始使用 <code>React</code> ，对一些基本的函数钩子使用都不是很熟，所以没有去绕开这种上下繁杂的传递数据方式，只是想要去完整的操作一遍 <code>React</code> 上下传递数据的细节。。。。</p>
-<h4 id="需要解决的问题："><a href="#需要解决的问题：" class="headerlink" title="需要解决的问题："></a>需要解决的问题：</h4><p>下去好好看看<code>React</code> 文档，并学习 <code>React</code> 中的各种钩子。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/08/220908-daily-summary/" data-id="cl7t5jrmn00009onoh8e58r4i" data-title="220908_daily_summary" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -606,7 +559,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" rel="tag">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Knowledge-System/" rel="tag">Knowledge System</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-ice/" rel="tag">work react ice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-react-Fusion-Design/" rel="tag">work, react, Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81/" rel="tag">work、react、</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" rel="tag">work、react、Fusion Design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81GIT/" rel="tag">work、react、GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" rel="tag">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81props/" rel="tag">work、react、props</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81week-summary/" rel="tag">work、react、week_summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" rel="tag">work、react、高级搜索</a></li></ul>
     </div>
   </div>
 
@@ -616,7 +569,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" style="font-size: 10px;">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81week-summary/" style="font-size: 10px;">work、react、week_summary</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
+      <a href="/tags/Knowledge-System/" style="font-size: 10px;">Knowledge System</a> <a href="/tags/work-react-ice/" style="font-size: 10px;">work react ice</a> <a href="/tags/work-react-Fusion-Design/" style="font-size: 10px;">work, react, Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81/" style="font-size: 10px;">work、react、</a> <a href="/tags/work%E3%80%81react%E3%80%81Fusion-Design/" style="font-size: 10px;">work、react、Fusion Design</a> <a href="/tags/work%E3%80%81react%E3%80%81GIT/" style="font-size: 10px;">work、react、GIT</a> <a href="/tags/work%E3%80%81react%E3%80%81UI%E3%80%81%E8%BE%93%E5%85%A5%E7%89%88%E6%9C%AC%E9%AA%8C%E8%AF%81%E3%80%81Table%E9%80%89%E9%A1%B9%E5%8D%95%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%88%E8%B6%85%E5%87%BA%E5%8D%95%E8%A1%8C%E9%83%A8%E5%88%86-%E4%BB%A3%E6%9B%BF%EF%BC%8C%E9%BC%A0%E6%A0%87hover%E6%98%BE%E7%A4%BA%E5%85%A8%E9%83%A8%EF%BC%89/" style="font-size: 10px;">work、react、UI、输入版本验证、Table选项单行显示（超出单行部分...代替，鼠标hover显示全部）</a> <a href="/tags/work%E3%80%81react%E3%80%81props/" style="font-size: 10px;">work、react、props</a> <a href="/tags/work%E3%80%81react%E3%80%81week-summary/" style="font-size: 10px;">work、react、week_summary</a> <a href="/tags/work%E3%80%81react%E3%80%81%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">work、react、高级搜索</a>
     </div>
   </div>
 
@@ -625,7 +578,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
     </div>
   </div>
 
@@ -636,6 +589,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/07/KnowledgeSystem/">KnowledgeSystem</a>
+          </li>
         
           <li>
             <a href="/2022/10/26/221009_daily_summary/">(no title)</a>
@@ -651,10 +608,6 @@
         
           <li>
             <a href="/2022/10/26/220921_daily_summary/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/26/221017_daily_summary/">(no title)</a>
           </li>
         
       </ul>
